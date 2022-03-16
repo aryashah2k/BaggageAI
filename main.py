@@ -2,10 +2,6 @@
 # coding: utf-8
 
 # Importing Python Libraries
-# 
-# 
-
-# In[1]:
 
 
 import cv2
@@ -19,8 +15,6 @@ from itertools import count
 # Creating a function to reads all the jpg file from a specific location
 # and returns the images, and the number of images read
 
-# In[2]:
-
 
 def read_images(path):
     images = []
@@ -33,8 +27,6 @@ def read_images(path):
 
 
 # Creating a function to takes a threat image then crops it tightly then it finds the maximum amoung the height and width then it adds black borders depending on the maximum to make the threat a squareimage
-
-# In[3]:
 
 
 def form_square(image):
@@ -78,8 +70,6 @@ def form_square(image):
 
 # Adding dynamic padding to an image
 
-# In[4]:
-
 
 def pad_image(image):
     (h, w) = image.shape[:2]
@@ -89,11 +79,8 @@ def pad_image(image):
     return padded
 
 
-# 
-# Taking a background and threat image amd rescales the threat image 
+# Taking background and threat image and rescales the threat image 
 # An optional argument is percent_factor
-
-# In[5]:
 
 
 def autoscaler(background, threat, percent_factor = 0.4):
@@ -106,9 +93,6 @@ def autoscaler(background, threat, percent_factor = 0.4):
 
 
 # Dynamically returns the x,y position the centroid of the largest contour in the background
-
-# In[6]:
-
 
 def get_xy(background):
     lower_white = np.array([245,245,245])  
@@ -124,9 +108,6 @@ def get_xy(background):
 
 
 # placing the threat object in the background at a certain x,y position in the background
-
-# In[7]:
-
 
 def place_threat(background, threat, x=0, y=0):
     (ht, wt) = threat.shape[:2]
@@ -144,9 +125,6 @@ def place_threat(background, threat, x=0, y=0):
 
 
 # location of threat images and background images
-
-# In[8]:
-
 
 threat_path = 'C:/Users/aarbs/BaggageAI/threat_images/'
 background_path = 'C:/Users/aarbs/BaggageAI/background_images/'
