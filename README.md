@@ -2,7 +2,6 @@
 
 # Problem Statement:
 
-# Case Study:- Image Processing
 - You are given two sets of images:- background and threat objects. Background images are the background x-ray images of baggage that gets generated after passing through a X-ray machine at airport. Threat images are the x-ray images of threats that are prohibited at airport while travelling.
 
 - Your task is to cut the threat objects, scale it down, rotate with 45 degree and paste it into the background images using image processing techniques in python.
@@ -35,7 +34,7 @@ Next, we fix the threat image according to the x, y position in background image
 
 The saved images are stored in the output folder for future reference.
 
-Documentation:
+# Documentation:
 
 1. read_images(path): This function reads the .jpg files from a specific location and returns a list of images as numpy array and the number of images read.
 2. form_square(image): This function takes in a image(threat, with the background set to black using the inRange() OpenCV function)  and finds the left, right, top, and bottom of the threat object, therby removing the extra background. 
